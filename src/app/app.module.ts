@@ -1,21 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { CovidComponent } from './covid/covid.component';
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+import { HomeComponent } from './home/home.component';
+import { SpaComponent } from './spa/spa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    CovidComponent,
+    HeaderComponent,
+    AboutComponent,
+    FooterComponent,
+    SubscribeComponent,
+    HomeComponent,
+    SpaComponent
   ],
   imports: [
-    BrowserModule,
     FormsModule,
+    BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

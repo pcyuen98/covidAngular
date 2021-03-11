@@ -1,27 +1,26 @@
-# MyApp
+# Requirements
+Download nodejs and install
+https://nodejs.org/en/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Download notepad ++ 
+https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.8/npp.7.8.8.Installer.x64.exe
 
-## Development server
+Download GIT
+https://github.com/git-for-windows/git/releases/download/v2.30.0.windows.1/Git-2.30.0-64-bit.exe
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Command to update after 1st time clone
+goto the project root (i.e. workplace/medibot-web/httpclient-test ) on command prompt then run below
 
-## Code scaffolding
+1) npm install -g @angular/cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2) npm install
 
-## Build
+# Command to start
+ng serve --host 0.0.0.0 --proxy-config proxy.conf.json
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Command to start ng serve faster
+ng serve --watch=true --sourceMap=false  --optimization=false 
 
-## Running unit tests
+# Command to start ng serve to test on mobile
+ng serve --host 0.0.0.0 --watch=true --sourceMap=false  --optimization=false 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
