@@ -10,8 +10,11 @@ export class CovidApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getCovid(): Observable<string> {
+  public getCovid(): any {
     return this.httpClient.get(`http://139.99.33.99:8081/covid/mining/my`, { responseType: 'text' });
   }
 
+  public getCovidDesc(): any {
+    return this.httpClient.get(`http://localhost:8081/covid/get/desc`);
+  }
 }

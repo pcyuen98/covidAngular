@@ -1,5 +1,17 @@
+  <div class="content" role="main">
+    <h1>Home</h1>
 
-<h2>
-  {{covidTotalDaily}}
-</h2>
-
+    <h2>
+      {{covidTotalDaily}}
+    </h2>
+    
+    <h3>List of Description</h3>
+    <div *ngIf="covidTotalDesc != undefined">
+      <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectDesc()"  multiple="multiple"   >
+        <option *ngFor="let table of covidTotalDesc">
+          {{table.description}} 
+        </option>
+    </select>
+    </div>
+    
+  </div>
