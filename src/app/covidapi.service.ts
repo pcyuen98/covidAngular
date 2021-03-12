@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
+import { GlobalConstants } from 'src/environments/GlobalConstants';
+import { GlobalMethods } from 'src/environments/GlobalMethods';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CovidApiService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private confirmationDialogService: ConfirmationDialogService) { }
 
   public getCovid(): any {
     return this.httpClient.get(`http://localhost:8081/covid/mining/my`, { responseType: 'text' });
@@ -24,8 +27,14 @@ export class CovidApiService {
     return this.httpClient.delete(`http://localhost:8081/covid/delete?id=` + id).subscribe((data: any) => {
     console.log(data); 
     resolve(data);
-      
-     })
+    
+     }
+     ,
+     (error) => {
+      console.log(error);
+      this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError (error));
+     }     
+     )
     });
   }
 
@@ -33,11 +42,19 @@ export class CovidApiService {
 
     return new Promise((resolve) => {
     return this.httpClient.get(`http://localhost:8081/covid/add?desc=` + desc).subscribe((data: any) => {
+
     console.log(data); 
     resolve(data);
       
+     }
+     ,
+     (error) => {
+      console.log(error);
+      this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError (error));
      })
+
     });
   }
+
 
 }

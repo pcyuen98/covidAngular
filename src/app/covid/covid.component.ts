@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CovidApiService } from '../covidapi.service';
-import { LocalApiService } from '../localapi.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
+import { GlobalConstants } from 'src/environments/GlobalConstants';
+import { GlobalMethods } from 'src/environments/GlobalMethods';
 
 @Component({
   selector: 'app-covid',
@@ -21,11 +24,16 @@ export class CovidComponent implements OnInit {
 
   public newDesc: any;
 
-  constructor(private httpClient: HttpClient, public covidApiService: CovidApiService, public localApiService: LocalApiService
+  constructor(
+    private httpClient: HttpClient, 
+    public covidApiService: CovidApiService,
+    public snackBar: MatSnackBar,
+    private confirmationDialogService: ConfirmationDialogService
 
   ) { }
 
   ngOnInit(): void {
+    
     this.getCovid();
     this.getCovidDesc();
 
@@ -33,17 +41,22 @@ export class CovidComponent implements OnInit {
   }
 
   getCovid(): any {
-    this.covidApiService.getCovid().subscribe((data: any) => {
+    this.covidTotalDaily = this.covidApiService.getCovid().subscribe((data: any) => {
       console.log(data); this.covidTotalDaily = data;
-    });
+    }
+    ,
+     (error: { error: { message: string; }; }) => {
+      console.log(error);
+      this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError (error));
+     } 
+    );
 
     return this.covidTotalDaily;
   }
 
   getCovidDesc(): any {
     this.covidApiService.getCovidDesc().subscribe((data: any) => {
-      console.log(data); 
-      
+      console.log(data);       
       this.covidTotalDesc = data;
     });
 
