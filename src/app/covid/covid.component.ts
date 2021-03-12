@@ -15,9 +15,11 @@ export class CovidComponent implements OnInit {
   
   public covidTotalDesc: any[] = [];
 
-  public books: any[] = [];
-
   public desc:any;
+
+  public descObject: any;
+
+  public newDesc: any;
 
   constructor(private httpClient: HttpClient, public covidApiService: CovidApiService, public localApiService: LocalApiService
 
@@ -26,6 +28,8 @@ export class CovidComponent implements OnInit {
   ngOnInit(): void {
     this.getCovid();
     this.getCovidDesc();
+
+    this.descObject = {};
   }
 
   getCovid(): any {
@@ -46,8 +50,28 @@ export class CovidComponent implements OnInit {
     return this.covidTotalDesc;
   }
   
-onSelectDesc() {
+  onSelectDesc(desc: any) {
 
-  console.log("desc-->"  + this.desc);
+    console.log("desc-->"  + this.desc);
+    if (this.desc[0]){
+      this.descObject = this.desc[0];
+      console.log("desc id-->"  + this.descObject.id);
+      console.log("desc description-->"  + this.descObject.description);
+    }
+  }
+
+  deleteDesc() {
+    this.covidApiService.deleteDesc(this.descObject.id).then(
+      resolve => {
+        this.getCovidDesc();
+      });
+   
+  }
+
+  addDesc() {
+    this.covidApiService.addDesc(this.newDesc).then(
+      resolve => {
+        this.getCovidDesc();
+      });
   }
 }

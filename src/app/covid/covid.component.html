@@ -1,17 +1,41 @@
-  <div class="content" role="main">
-    <h1>Home</h1>
-
+  <div class="container" role="main">
     <h2>
-      {{covidTotalDaily}}
+      Daily Covid Update - {{covidTotalDaily}}
     </h2>
+
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Add New Record</legend>
+
+    <label for="Description">Description</label>
+    <input type="text"  id="desc" [(ngModel)]="newDesc" name="desc" >
+    <p></p>
+
+    <input type="submit" value="Add" (click)="addDesc()">
     
-    <h3>List of Description</h3>
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Select Records to view or Delete</legend>
     <div *ngIf="covidTotalDesc != undefined">
-      <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectDesc()"  multiple="multiple"   >
-        <option *ngFor="let table of covidTotalDesc">
+
+      <select [(ngModel)]="desc" name="desc" placeholder="select" (change)="onSelectDesc($event)"  multiple="multiple"   >
+        <option *ngFor="let table of covidTotalDesc" [value]="table">
           {{table.description}} 
         </option>
     </select>
     </div>
+
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Delete record</legend>
+
+    <form>
     
+    <div  *ngIf="descObject != undefined" class="form-group">
+      <label>ID</label>
+      <input type="text"  id="id" [(ngModel)]="descObject.id" name="id" disabled>
+      <label>Description</label>     
+      <input type="text"  id="desc" [(ngModel)]="descObject.description" name="desc" disabled>
+      <p></p>
+      <input type="submit" value="Delete" (click)="deleteDesc()">
+    </div>
+  </form>
+
   </div>
