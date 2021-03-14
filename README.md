@@ -6,7 +6,7 @@
 
 <p align="center">
 
-  <img width="460" height="300" src="/pic/JEE.jpg">
+  <img width="460" height="300" src="/pic/angular.jpg">
 </p>
 
 <b>
