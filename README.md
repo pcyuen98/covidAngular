@@ -26,11 +26,11 @@ Covid API services - https://covid-19-apis.postman.com/
 
 </b>
 
-# Manual A - Create your first Git Hub
-https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#heading=h.pscfpgrh5zta
+# Manual A - Configure Your Environment
+https://docs.google.com/document/d/1nubOES0ZyDTK7eu04FLol1ud7WufyWUE/edit
 
-# Manual B - Configure Your Environment
-https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit?usp=sharing
+# Manual B - Practical Guide
+https://docs.google.com/document/d/1BihtQHdNe_-uGzlq8vPrHjO8RqPTFGe6/edit#heading=h.3bkmpz9u4oc1
 
 # Manual C - Configure Covid Apps With VM
 https://docs.google.com/document/d/1rw0uv0jHWLHhjP-Tt9gSJoZA26xav5csF7EshvVLFKo/edit?usp=sharing
