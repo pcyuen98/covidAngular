@@ -43,26 +43,8 @@ https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/
 
 
 # Application HTTP URL
-Get Latest Covid Cases 
-http://localhost:8081/covid/get/latest
-
-Get total Covid Cases
-http://localhost:8081/covid/get
-
-Add A Record on Description Table
-http://localhost:8081/covid/add?desc=100
-
-Get All on Description Table
-http://localhost:8081/covid/get/desc
-
-Delete A Record on Description Table
-http://localhost:8081/covid/delete?id=1
-
-Mining API
-http://localhost:8081/covid/mining/my
-
-Mining API (Loose Couple)
-http://localhost:8091/covid/mining/my
+Angular Home
+http://localhost:4200/home
 
 # Useful Debugging Command
 
