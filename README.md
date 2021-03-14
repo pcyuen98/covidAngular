@@ -1,26 +1,74 @@
-# Requirements
-Download nodejs and install
-https://nodejs.org/en/
+1. Architect Enterprise Applications with Jakarta EE (Microservices with Spring Boot) - 15-19 March
+2. Developing Applications for the Jakarta EE Platform (Angular and Single Page Application)  - 25 - 29 March
+3. Java Performance Tuning and Optimization (Java Collection Class, Web Services, performance Tuning) - 1,2,5 April
 
-Download notepad ++ 
-https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.8/npp.7.8.8.Installer.x64.exe
+# 5 DAYS Architect Enterprise Applications with Java EE (Microservices with Spring Boot)
 
-Download GIT
-https://github.com/git-for-windows/git/releases/download/v2.30.0.windows.1/Git-2.30.0-64-bit.exe
+<p align="center">
 
-# Command to update after 1st time clone
-goto the project root (i.e. workplace/medibot-web/httpclient-test ) on command prompt then run below
+  <img width="460" height="300" src="/pic/JEE.jpg">
+</p>
 
-1) npm install -g @angular/cli
+<b>
 
-2) npm install
 
-# Command to start
-ng serve --host 0.0.0.0 --proxy-config proxy.conf.json
 
-# Command to start ng serve faster
-ng serve --watch=true --sourceMap=false  --optimization=false 
+1) To use Java and build a live application using latest technology, framework and design
+					
+2) To build a Java application with automation and Dev Ops (Developement Operation) Environment
+				
+3) To build application with Microservices Design as API Restful Services provider				
 
-# Command to start ng serve to test on mobile
-ng serve --host 0.0.0.0 --watch=true --sourceMap=false  --optimization=false 
+4) To build an application with live example which is integration with 
+Covid API services - https://covid-19-apis.postman.com/
+
+5) To build and deploy JEE application on simulation server from end to end
+
+</b>
+
+# Manual A - Create your first Git Hub
+https://docs.google.com/document/d/1ohb52xOEZTbvAtgYo-haXdCednwa-4Gc/edit#heading=h.pscfpgrh5zta
+
+# Manual B - Configure Your Environment
+https://docs.google.com/document/d/1sLfvVACVJ4OOEcmhOS1gB8iS8V5IvMSlWWalOY_4WCM/edit?usp=sharing
+
+# Manual C - Configure Covid Apps With VM
+https://docs.google.com/document/d/1rw0uv0jHWLHhjP-Tt9gSJoZA26xav5csF7EshvVLFKo/edit?usp=sharing
+
+# Manual D - How to commit codes to Git HUb
+https://drive.google.com/file/d/1iQhKMmc7rD18sQNb_DMk8n83BSduL1Y8/view?usp=sharing
+
+# Assessment, writing code and Test 
+https://docs.google.com/document/d/1cQHPBTt2D9EjtZ4GjKFXegZrSZNb2354bN-8ICMW52g/edit?usp=sharing
+
+
+# Application HTTP URL
+Get Latest Covid Cases 
+http://localhost:8081/covid/get/latest
+
+Get total Covid Cases
+http://localhost:8081/covid/get
+
+Add A Record on Description Table
+http://localhost:8081/covid/add?desc=100
+
+Get All on Description Table
+http://localhost:8081/covid/get/desc
+
+Delete A Record on Description Table
+http://localhost:8081/covid/delete?id=1
+
+Mining API
+http://localhost:8081/covid/mining/my
+
+Mining API (Loose Couple)
+http://localhost:8091/covid/mining/my
+
+# Useful Debugging Command
+
+How to tail a log file
+tail -f covid.log
+
+How to check postgres DB is running
+telnet localhost 5432
 
