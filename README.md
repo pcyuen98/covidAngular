@@ -6,7 +6,7 @@
 
 <p align="center">
 
-  <img width="760" height="500" src="/pic/angular.jpg">
+  <img width="960" height="500" src="/pic/angular.jpg">
 </p>
 
 <b>
