@@ -13,7 +13,14 @@ export class GlobalMethods {
             }
         else if (status == '500')
             {
-                return error.error.message;
+                if (error.error!= undefined && error.error.message != undefined) {
+                    
+                    return error.error.message;
+                }
+                else {
+                    return error.message;
+                }
+                
             }
             else if (status == '0')
             {
