@@ -4,17 +4,31 @@ import { Injectable } from '@angular/core';
 export class GlobalMethods {
 
     public static getError(error: any) {
-        if (error.status == '404')
+
+        if (error.status!= undefined) {
+            let status = error.status ;
+            if (status == '404')
+            {
+                return error.message;
+            }
+        else if (status == '500')
+            {
+                return error.error.message;
+            }
+            else if (status == '0')
+            {
+                return error.message;
+            }    
+        }
+        
+        else if (error.message != undefined)
         {
             return error.message;
         }
-        else if (error.status == '500')
-        {
-            return error.error.message;
-        }
         else {
-            return 'No Error Message detected';
+            return error;
         }
             
     }
- }
+ 
+}

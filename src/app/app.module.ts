@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +11,7 @@ import { SpaComponent } from './spa/spa.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogService } from './confirmation-dialog/confirmation-dialog.service';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +20,14 @@ import { ConfirmationDialogService } from './confirmation-dialog/confirmation-di
     HeaderComponent,
     HomeComponent,
     SpaComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    HelloComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatSnackBarModule,
     BrowserAnimationsModule
         
   ],

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Medibot Angular';
+  title = 'Covid Angular';
 
   constructor(public router: Router) {
 

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CovidApiService } from '../covidapi.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { GlobalMethods } from 'src/environments/GlobalMethods';
@@ -27,7 +26,6 @@ export class CovidComponent implements OnInit {
   constructor(
     private httpClient: HttpClient, 
     public covidApiService: CovidApiService,
-    public snackBar: MatSnackBar,
     private confirmationDialogService: ConfirmationDialogService
 
   ) { }
@@ -74,10 +72,18 @@ export class CovidComponent implements OnInit {
   }
 
   deleteDesc() {
-    this.covidApiService.deleteDesc(this.descObject.id).then(
-      resolve => {
-        this.getCovidDesc();
-      });
+    console.log("covidTotalDesc length-->" + this.covidTotalDesc.length);
+
+    if (this.covidTotalDesc.length == 0) {
+      this.confirmationDialogService.confirm(GlobalConstants.errorMessageFE, "List is Empty");
+    }
+    else {
+      this.covidApiService.deleteDesc(this.descObject.id).then(
+        resolve => {
+          this.getCovidDesc();
+        });
+    }
+   
    
   }
 
