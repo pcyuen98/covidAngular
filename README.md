@@ -11,18 +11,15 @@
 
 <b>
 
-
-
-1) To use Java and build a live application using latest technology, framework and design
-					
-2) To build a Java application with automation and Dev Ops (Developement Operation) Environment
+1) To integrate with JEE Microservices course 	
+2) 					
+3) Learning a modern JavaScript framework which is TypeScript and to be Full Stack Software Engineer
 				
 3) To build application with Microservices Design as API Restful Services provider				
-
 4) To build an application with live example which is integration with 
 Covid API services - https://covid-19-apis.postman.com/
 
-5) To build and deploy JEE application on simulation server from end to end
+5) To build and deploy Single Page Application with Transactional and Master Data
 
 </b>
 
