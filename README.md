@@ -54,3 +54,6 @@ tail -f covid.log
 How to check postgres DB is running
 telnet localhost 5432
 
+# What is new in Angular 11
+https://www.telerik.com/blogs/whats-new-angular-11
+
