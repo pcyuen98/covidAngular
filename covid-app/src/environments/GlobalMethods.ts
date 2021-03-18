@@ -13,9 +13,9 @@ export class GlobalMethods {
             }
         else if (status == '500')
             {
-                if (error.error!= undefined && error.error.message != undefined) {
+                if (error.error!= undefined ) {
                     
-                    return error.error.message;
+                    return error.error;
                 }
                 else {
                     return error.message;
