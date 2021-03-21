@@ -12,8 +12,8 @@
 <b>
 
 1) To integrate with JEE Microservices course 	
-2) 					
-3) Practical with a modern JavaScript framework which is TypeScript 
+ 					
+2) Practical with a modern JavaScript framework which is TypeScript 
 
 3) Be a FullStack Developer
 				
