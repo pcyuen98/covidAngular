@@ -22,37 +22,54 @@ export class CovidApiService {
   public deleteDesc(id: number): Promise<any> {
 
     return new Promise((resolve) => {
-    return this.httpClient.delete(`http://localhost:8081/covid/delete?id=` + id).subscribe((data: any) => {
-    console.log(data); 
-    resolve(data);
-    
-     }
-     ,
-     (error) => {
-      console.log(error);
-      this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError (error));
-     }     
-     )
+      return this.httpClient.delete(`http://localhost:8081/covid/delete?id=` + id).subscribe((data: any) => {
+        console.log(data);
+        resolve(data);
+
+      }
+        ,
+        (error) => {
+          console.log(error);
+          this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
+        }
+      )
     });
   }
 
   public addDesc(desc: string): Promise<any> {
 
     return new Promise((resolve) => {
-    return this.httpClient.get(`http://localhost:8081/covid/add?desc=` + desc).subscribe((data: any) => {
+      return this.httpClient.get(`http://localhost:8081/covid/add?desc=` + desc).subscribe((data: any) => {
 
-    console.log(data); 
-    resolve(data);
-      
-     }
-     ,
-     (error) => {
-      console.log(error);
-      this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError (error));
-     })
+        console.log(data);
+        resolve(data);
+
+      }
+        ,
+        (error) => {
+          console.log(error);
+          this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
+        })
 
     });
   }
 
 
+  public putDesc(body : any): Promise<any> {
+
+    return new Promise((resolve) => {
+      return this.httpClient.put(`http://localhost:8081/covid/put`, body).subscribe((data: any) => {
+
+        console.log(data);
+        resolve(data);
+
+      }
+        ,
+        (error) => {
+          console.log(error);
+          this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
+        })
+
+    });
+  }
 }
