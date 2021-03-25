@@ -19,6 +19,7 @@ export class HelloComponent implements OnInit {
     // Inject your confirmation dialog
     private confirmationDialogService: ConfirmationDialogService
     ) {     
+      
   }
 
   ngOnInit(): void {
@@ -26,8 +27,8 @@ export class HelloComponent implements OnInit {
     // https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit#:~:text=The%20main%20difference%20between%20constructor,how%20the%20code%20is%20structured.
 
     // initialize by call the component method here. 
-
-    // this.getBasicHello();
+    this.getBasicHello();
+     
     // this.getBasicHelloSubscribe();
   }
 
@@ -37,9 +38,12 @@ export class HelloComponent implements OnInit {
 
   // Basic Method without calling a service
   public getBasicHello(): any {
+    console.log("getBasicHello runs!!!");
     this.httpClient.get(`http://localhost:8081/covid/hello`, { responseType: 'text' })
+    // after subscribe actions
       .subscribe((data: any) => 
                   {
+                    // The action after HTTP is completed
                     // no action yet
                   }
                 );
@@ -53,6 +57,7 @@ export class HelloComponent implements OnInit {
     this.httpClient.get(`http://localhost:8081/covid/hello`, { responseType: 'text' })
       .subscribe((data: any) => 
                   {
+                    // The action after HTTP is completed
                     // assign HTTP response with local variable
                     this.hello = data;
                   }
@@ -74,13 +79,13 @@ export class HelloComponent implements OnInit {
 
 
   // Call HTTP Get Logging with Promise
-  // Only useful for async HTTP call 
+  // Only useful for sync HTTP call 
 
   public getLoggingWithPromise() {
       this.helloService.getLoggingWithPromise(this.input).then(
         resolve => {
 
-          // this line below will be executed only after HTTP response is completed
+          // this line below will be executed only AFTER HTTP response is completed
           this.hello = this.helloService.loggingData;
         });;
   }
