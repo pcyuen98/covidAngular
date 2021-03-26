@@ -74,4 +74,15 @@
   
     <input type="submit" value="Post" (click)="addPost()">
   <!-- Add Post ends  -->
+
+  <!-- Add Delete with Condition starts  -->
+    <br><br><br>
+    <legend style="color:black;font-weight:bold;">Section E. Delete with Condition </legend>
+  
+    <label for="Description">Description</label>
+    <input type="text" id="delConditionDesc" [(ngModel)]="delConditionDesc.desc" name="delConditionDesc">
+    <p></p>
+  
+    <input type="submit" value="Delete With Condition" (click)="findAndDelete()">
+    <!-- Add Delete with Condition starts  -->
 </div>

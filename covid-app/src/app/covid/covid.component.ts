@@ -28,6 +28,8 @@ export class CovidComponent implements OnInit {
 
   public postDesc: any;
 
+  public delConditionDesc: any;
+
   constructor(
     private httpClient: HttpClient,
     public covidApiService: CovidApiService,
@@ -39,6 +41,7 @@ export class CovidComponent implements OnInit {
     this.descObject = {};
     this.updateDesc = {};
     this.postDesc = {};
+    this.delConditionDesc = {};
     this.getCovid();
     this.getCovidDesc();
 
