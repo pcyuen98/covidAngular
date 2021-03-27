@@ -137,4 +137,9 @@ export class CovidComponent implements OnInit {
     // if the method below being called using async way, then the table desc wont be updated accordingly after data added
     this.getCovidDesc();   
   }
+
+  findAndDelete() {
+    // if the method below being called using async way, then the table desc wont be updated accordingly after data added
+    this.getCovidDesc();   
+  }
 }
