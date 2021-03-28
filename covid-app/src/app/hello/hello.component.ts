@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { HelloService } from '../hello.service';
 
@@ -39,7 +40,7 @@ export class HelloComponent implements OnInit {
   // Basic Method without calling a service
   public getBasicHello(): any {
     console.log("getBasicHello runs!!!");
-    this.httpClient.get(`http://localhost:8081/covid/hello`, { responseType: 'text' })
+    this.httpClient.get(GlobalConstants.helloApiURL + `/covid/hello`, { responseType: 'text' })
     // after subscribe actions
       .subscribe((data: any) => 
                   {
@@ -54,7 +55,7 @@ export class HelloComponent implements OnInit {
   // Method with response data subscription and assign hello variable with response data
   // Get Method without Service
   public getBasicHelloSubscribe(): any {
-    this.httpClient.get(`http://localhost:8081/covid/hello`, { responseType: 'text' })
+    this.httpClient.get(GlobalConstants.helloApiURL + `/covid/hello`, { responseType: 'text' })
       .subscribe((data: any) => 
                   {
                     // The action after HTTP is completed

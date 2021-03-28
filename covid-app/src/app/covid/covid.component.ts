@@ -46,7 +46,7 @@ export class CovidComponent implements OnInit {
     this.getCovidDesc();
 
     console.log("Covid Component Inited");
-    console.log("Total of Description Column Row --->" + this.descObject.length);
+    console.log("Total of Description Table Rows --->" + this.descObject.length);
   }
 
   getCovid(): any {
