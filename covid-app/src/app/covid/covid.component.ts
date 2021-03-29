@@ -9,9 +9,8 @@ import { CovidCasesDesc } from 'src/model/CovidCasesDesc';
 @Component({
   selector: 'app-covid',
   providers: [CovidApiService],
-  styleUrls: ['./covid.component.css'],
+  styleUrls: ['../share/css/share.component.css'],
   templateUrl: './covid.component.html',
-
 })
 export class CovidComponent implements OnInit {
   public covidTotalDaily: any;
@@ -46,7 +45,7 @@ export class CovidComponent implements OnInit {
     this.getCovidDesc();
 
     console.log("Covid Component Inited");
-    console.log("Total of Description Table Rows --->" + this.descObject.length);
+    console.log("Total of Description Table Rows --->" + this.covidTotalDesc.length);
   }
 
   getCovid(): any {
