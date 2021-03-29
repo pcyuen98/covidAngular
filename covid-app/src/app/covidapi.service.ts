@@ -72,4 +72,19 @@ export class CovidApiService {
 
     });
   }
+
+  // TODO: Practical 7 - complete the implementation below
+  // It should have a promise sync function 
+
+  public addPost(body: any) {
+
+    return this.httpClient.post(`http://localhost:8081/covid/post`, body).subscribe((data: any) => {
+
+    }
+      ,
+      (error) => {
+        console.log(error);
+        this.confirmationDialogService.confirm(GlobalConstants.errorMessage, GlobalMethods.getError(error));
+      })
+  }
 }

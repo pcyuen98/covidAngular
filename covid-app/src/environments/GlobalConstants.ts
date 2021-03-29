@@ -1,6 +1,6 @@
 export class GlobalConstants {
 
-    public static apiURL: string = "https://itsolutionstuff.com/";      
+    public static helloApiURL: string = "http://139.99.33.99:8092";      
 
     public static errorMessage: string = "BackEnd Error Found";
 

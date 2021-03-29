@@ -20,12 +20,12 @@ constructor(
 public loggingData: any;
 
 public getLogging(value: string): any {
-   return this.httpClient.get(`http://localhost:8081/covid/logging?aNumberOnly=` + value, { responseType: 'text' });
+   return this.httpClient.get(GlobalConstants.helloApiURL + `/covid/logging?aNumberOnly=` + value, { responseType: 'text' });
 }
 
 public getLoggingWithPromise(value: string): Promise<any> 
       {
-          let getURL = `http://localhost:8081/covid/logging?aNumberOnly=` + value;
+          let getURL = GlobalConstants.helloApiURL + `/covid/logging?aNumberOnly=` + value;
 
           return new Promise((resolve) => 
           {
