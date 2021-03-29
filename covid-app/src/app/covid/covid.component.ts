@@ -37,7 +37,7 @@ export class CovidComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.descObject = {};
+    this.descObject = {}; //{} = creating new object
     this.updateDesc = {};
     this.postDesc = {};
     this.delConditionDesc = {};
