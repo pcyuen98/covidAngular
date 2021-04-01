@@ -40,7 +40,7 @@ http://localhost:4200/home
 # Meeting Link
 https://teams.microsoft.com/l/meetup-join/19%3ameeting_NWQwNjBlZTMtOTI0Ni00YjUxLTk0Y2MtNDQ1ZWRlZGY2YzQz%40thread.v2/0?context=%7b%22Tid%22%3a%2225d7dc54-54d7-49e1-a6b9-5f3110280617%22%2c%22Oid%22%3a%22e6350384-5c3c-4b56-8fd6-45ea0fa4f2f0%22%7d
 
-# Group Info
+# Practical SpreadSheet
 https://docs.google.com/spreadsheets/d/1KtmEnBNoG6VCbFY-vwyTTwWD8x9hgqIG/edit#gid=8489761
 
 # Link to Covid API
