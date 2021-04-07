@@ -12,17 +12,17 @@ export class CovidApiService {
   constructor(private httpClient: HttpClient, private confirmationDialogService: ConfirmationDialogService) { }
 
   public getCovid(): any {
-    return this.httpClient.get(`http://localhost:8081/covid/get/latest`, { responseType: 'text' });
+    return this.httpClient.get(GlobalConstants.helloApiURL + '/covid/get/latest', { responseType: 'text' });
   }
 
   public getCovidDesc(): any {
-    return this.httpClient.get(`http://localhost:8081/covid/get/desc`);
+    return this.httpClient.get(GlobalConstants.helloApiURL + '/covid/get/desc');
   }
 
   public deleteDesc(id: number): Promise<any> {
 
     return new Promise((resolve) => {
-      return this.httpClient.delete(`http://localhost:8081/covid/delete?id=` + id).subscribe((data: any) => {
+      return this.httpClient.delete(GlobalConstants.helloApiURL + '/covid/delete?id=' + id).subscribe((data: any) => {
         console.log(data);
         resolve(data);
 
@@ -39,7 +39,7 @@ export class CovidApiService {
   public addDesc(desc: string): Promise<any> {
 
     return new Promise((resolve) => {
-      return this.httpClient.get(`http://localhost:8081/covid/add?desc=` + desc).subscribe((data: any) => {
+      return this.httpClient.get(GlobalConstants.helloApiURL + '/covid/add?desc=' + desc).subscribe((data: any) => {
 
         console.log(data);
         resolve(data);
@@ -58,7 +58,7 @@ export class CovidApiService {
   public putDesc(body : any): Promise<any> {
 
     return new Promise((resolve) => {
-      return this.httpClient.put(`http://localhost:8081/covid/put`, body).subscribe((data: any) => {
+      return this.httpClient.put(GlobalConstants.helloApiURL + '/covid/put', body).subscribe((data: any) => {
 
         console.log(data);
         resolve(data);
@@ -78,7 +78,7 @@ export class CovidApiService {
 
   public addPost(body: any) {
 
-    return this.httpClient.post(`http://localhost:8081/covid/post`, body).subscribe((data: any) => {
+    return this.httpClient.post(GlobalConstants.helloApiURL + '/covid/post', body).subscribe((data: any) => {
 
     }
       ,
