@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GlobalConstants } from 'src/environments/GlobalConstants';
-import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-dialog.service';
 import { HelloService } from '../hello.service';
 
 @Component({
@@ -16,9 +15,7 @@ export class HelloComponent implements OnInit {
 
     // Inject your Hello Service Here
     private helloService: HelloService,
-    
-    // Inject your confirmation dialog
-    private confirmationDialogService: ConfirmationDialogService
+
     ) {     
       
   }
