@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { HelloService } from '../hello.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-hello',
@@ -16,6 +17,7 @@ export class HelloComponent implements OnInit {
     // Inject your Hello Service Here
     private helloService: HelloService,
 
+    private route: ActivatedRoute
     ) {     
       
   }
@@ -28,6 +30,9 @@ export class HelloComponent implements OnInit {
     this.getBasicHello();
      
     // this.getBasicHelloSubscribe();
+
+    let id = this.route.snapshot.paramMap.get("id");
+    console.log("id==>" + id);
   }
 
   hello: string = 'hello world';

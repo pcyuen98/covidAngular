@@ -5,6 +5,7 @@ import { ConfirmationDialogService } from '../confirmation-dialog/confirmation-d
 import { GlobalConstants } from 'src/environments/GlobalConstants';
 import { GlobalMethods } from 'src/environments/GlobalMethods';
 import { CovidCasesDesc } from 'src/model/CovidCasesDesc';
+import { Router  , ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-covid',
@@ -31,6 +32,7 @@ export class CovidComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
+    private route: ActivatedRoute,
     public covidApiService: CovidApiService,
     private confirmationDialogService: ConfirmationDialogService
 
@@ -46,6 +48,7 @@ export class CovidComponent implements OnInit {
 
     console.log("Covid Component Inited");
     console.log("Total of Description Table Rows --->" + this.covidTotalDesc.length);
+    console.log("params-->" + this.route.snapshot.paramMap);
   }
 
   getCovid(): any {
