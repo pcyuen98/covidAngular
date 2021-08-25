@@ -8,4 +8,5 @@ export class GlobalConstants {
 
     public static COVID_APP: string = "COVID-APP";
     
+    
 }
